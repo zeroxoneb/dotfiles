@@ -97,7 +97,6 @@ fi
 #########
 alias make='gmake'
 alias uuidgen='uuidgen | tr "[A-Z]" "[a-z]"'
-export HOMEBREW_GITHUB_API_TOKEN="85655222c7e574fc60ebe7462ebb9aa242b5b070"
 
 ########
 # Tmux #
