@@ -130,12 +130,6 @@ fi
 ##########
 export EDITOR=vim
 
-#######
-# SSH #
-#######
-export SSH_AUTH_SOCK=$HOME/.sekey/ssh-agent.ssh
-
-
 # Load zsh
 unsetopt AUTO_CD
 source $ZSH/oh-my-zsh.sh
