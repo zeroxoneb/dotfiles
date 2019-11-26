@@ -14,29 +14,8 @@ filetype indent on
 """"""
 " UI "
 """"""
-" Show current position
-set ruler
-
 " Show line numbers
 set number
-
-" Show matching brackets when text indicator is over them
-set showmatch
-
-" Hide the default mode text (e.g. -- INSERT -- below the statusline)
-set noshowmode 
-
-" Show the status line
-set laststatus=2
-
-" Always display the tabline, even if there is only one tab
-set showtabline=2 
-
-" Disable vim instant markdown preview from autostarting
-let g:instant_markdown_autostart = 0
-
-" Disable folding in vim markdown plugin
-let g:vim_markdown_folding_disabled=1
 
 " Redrew only when we need to
 set lazyredraw
@@ -62,15 +41,17 @@ map <C-n> :NERDTreeToggle<CR>
 """""""""""
 " Airline "
 """""""""""
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts=1
+let g:airline_theme='minimalist'
+let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#tabline#left_sep=' '
+let g:airline#extensions#tabline#left_alt_sep='|'
 
 """"""""""""""""
 " Colors/Fonts "
 """"""""""""""""
 syntax on
 set background=dark
-" colorscheme vimbrant
 highlight ColorColumn ctermbg=7
 highlight ColorColumn guibg=Gray
 
