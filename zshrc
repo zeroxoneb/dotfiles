@@ -100,7 +100,7 @@ plugins=(
 ##########
 # Python #
 ##########
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+export VIRTUALENVWRAPPER_PYTHON="$(which python3)"
 alias python='python3'
 
 # Virtual env
