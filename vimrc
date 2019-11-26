@@ -47,22 +47,23 @@ set lazyredraw
 autocmd StdinReadPre * let s:std_in=1
 
 " Start nerdtree when no files are provided
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd VimEnter * if argc() == 0 &&
+      \ !exists("s:std_in") |
+      \ NERDTree | endif
 " Start nerdstree when a directory is provided
 autocmd VimEnter * if argc() == 1 &&
       \ isdirectory(argv()[0]) &&
       \ !exists("s:std_in") |
       \ exe 'NERDTree' argv()[0] |
       \ wincmd p | ene | exe 'cd '.argv()[0] | endif
-
-"""
-" Airline "
-"""
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
-
 " ctrl-n to toggle nerdtree
 map <C-n> :NERDTreeToggle<CR>
+
+"""""""""""
+" Airline "
+"""""""""""
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 
 """"""""""""""""
 " Colors/Fonts "

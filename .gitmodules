@@ -49,3 +49,6 @@
 [submodule "zsh/custom/themes/powerlevel9k"]
 	path = zsh/custom/themes/powerlevel9k
 	url = https://github.com/Powerlevel9k/powerlevel9k.git
+[submodule "vim/bundle/vim-devicons"]
+	path = vim/bundle/vim-devicons
+	url = https://github.com/ryanoasis/vim-devicons.git
