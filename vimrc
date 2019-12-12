@@ -97,3 +97,7 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Enable expansion with delimitMate
 let g:delimitMate_expand_cr = 1
+
+" Starlark/buck
+au BufRead,BufNewFile *.bzl set filetype=python
+au BufRead,BufNewFile BUCK set filetype=python
