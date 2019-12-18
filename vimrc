@@ -101,3 +101,5 @@ let g:delimitMate_expand_cr = 1
 " Starlark/buck
 au BufRead,BufNewFile *.bzl set filetype=python
 au BufRead,BufNewFile BUCK set filetype=python
+au BufRead,BufNewFile BUILD set filetype=python
+au BufRead,BufNewFile TARGETS set filetype=python
