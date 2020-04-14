@@ -108,7 +108,7 @@ alias uuidgen='uuidgen | tr "[A-Z]" "[a-z]"'
 # Tmux #
 ########
 ZSH_TMUX_AUTOQUIT=false
-ZSH_TMUX_AUTOSTART=false
+ZSH_TMUX_AUTOSTART=${LOCAL_ZSH_TMUX_AUTOSTART:-false}
 
 # Set a session name env var
 if [[ -n "$TMUX" ]]; then
