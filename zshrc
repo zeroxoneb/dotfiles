@@ -7,8 +7,8 @@ export PATH=$HOME/bin:/usr/local/bin:/bin:/usr/bin:/sbin:/usr/sbin
 #######
 # ZSH #
 #######
-export ZSH_CUSTOM=${HOME}/.zsh/custom
-export ZSH=$HOME/.zsh/oh-my-zsh
+export ZSH=$HOME/.dotfiles/zsh/oh-my-zsh
+export ZSH_CUSTOM=${HOME}/.dotfiles/zsh/custom
 unsetopt auto_cd
 
 CASE_SENSITIVE="true"
@@ -80,6 +80,7 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 plugins=(
   extip
   git
+  gpg-agent
   mercurial
   rust
   virtualenv
@@ -101,13 +102,15 @@ fi
 #########
 # Tools #
 #########
-alias make='gmake'
+if [[ "${OSTYPE}" == darwin* ]]; then
+  alias make='gmake'
+fi
 alias uuidgen='uuidgen | tr "[A-Z]" "[a-z]"'
 
 ########
 # Tmux #
 ########
-ZSH_TMUX_AUTOQUIT=false
+ZSH_TMUX_AUTOQUIT=${LOCAL_ZSH_TMUX_AUTOQUIT:-false}
 ZSH_TMUX_AUTOSTART=${LOCAL_ZSH_TMUX_AUTOSTART:-false}
 
 # Set a session name env var
