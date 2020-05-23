@@ -82,10 +82,12 @@ plugins=(
   git
   gpg-agent
   mercurial
+  python
   rust
   virtualenv
   virtualenvwrapper 
   tmux
+  uuidgen
 )
 
 ##########
@@ -103,9 +105,8 @@ fi
 # Tools #
 #########
 if [[ "${OSTYPE}" == darwin* ]]; then
-  alias make='gmake'
+  plugins+=(sekey)
 fi
-alias uuidgen='uuidgen | tr "[A-Z]" "[a-z]"'
 
 ########
 # Tmux #
