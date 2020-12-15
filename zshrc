@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 ########
 # PATH #
 ########
@@ -32,46 +39,8 @@ fi
 #############
 # ZSH Theme #
 #############
-ZSH_THEME="powerlevel9k/powerlevel9k"
-POWERLEVEL9K_MODE='nerdfont-complete'
-CONTEXT_ICON=${LOCAL_CONTEXT_ICON:-"ﴥ"}
-DEFAULT_BG=${LOCAL_DEFAULT_FG:-"blue"}
-DEFAULT_FG=${LOCAL_DEFAULT_BG:-"white"}
-
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs virtualenv)
-POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR=""
-
-POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
-POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="]# "
-
-POWERLEVEL9K_CONTEXT_TEMPLATE="${CONTEXT_ICON} ${OS_ICON} %4m"
-POWERLEVEL9K_CONTEXT_DEFAULT_BACKGROUND=${DEFAULT_BG}
-POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND=${DEFAULT_FG}
-POWERLEVEL9K_CONTEXT_REMOTE_BACKGROUND=${DEFAULT_BG}
-POWERLEVEL9K_CONTEXT_REMOTE_FOREGROUND=${DEFAULT_FG}
-
-POWERLEVEL9K_DIR_DEFAULT_BACKGROUND=${DEFAULT_FG}
-POWERLEVEL9K_DIR_DEFAULT_FOREGROUND=${DEFAULT_BG}
-POWERLEVEL9K_DIR_HOME_BACKGROUND=${DEFAULT_FG}
-POWERLEVEL9K_DIR_HOME_FOREGROUND=${DEFAULT_BG}
-POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND=${DEFAULT_FG}
-POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND=${DEFAULT_BG}
-
-POWERLEVEL9K_VCS_CLEAN_BACKGROUND="black"
-POWERLEVEL9K_VCS_CLEAN_FOREGROUND="white"
-POWERLEVEL9K_VCS_MODIFIED_BACKGROUND="magenta"
-POWERLEVEL9K_VCS_MODIFIED_FOREGROUND="white"
-POWERLEVEL9K_VCS_ACTIONFORMAT_BACKGROUND="red"
-POWERLEVEL9K_VCS_ACTIONFORMAT_FOREGROUND="white"
-POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND="cyan"
-POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND="white"
-POWERLEVEL9K_SHOW_CHANGESET=true
-
-POWERLEVEL9K_VIRTUALENV_FOREGROUND="white"
-POWERLEVEL9K_VIRTUALENV_BACKGROUND="green"
-
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
+ZSH_THEME="powerlevel10k/powerlevel10k"
+# POWERLEVEL10K_MODE='nerdfont-complete'
 #######
 
 ###########
@@ -80,12 +49,12 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 plugins=(
   extip
   git
-  gpg-agent
+  # gpg-agent
   mercurial
   python
   rust
-  virtualenv
-  virtualenvwrapper 
+  # virtualenv
+  # virtualenvwrapper 
   tmux
   uuidgen
 )
@@ -105,7 +74,7 @@ fi
 # Tools #
 #########
 if [[ "${OSTYPE}" == darwin* ]]; then
-  plugins+=(sekey)
+  plugins+=()
 fi
 
 ########
@@ -127,3 +96,5 @@ export EDITOR=vim
 # Load zsh
 unsetopt AUTO_CD
 source $ZSH/oh-my-zsh.sh
+
+[[ ! -f ~/.dotfiles/p10k.zsh ]] || source ~/.dotfiles/p10k.zsh
