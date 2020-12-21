@@ -86,6 +86,7 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 # Plugins #
 ###########
 plugins=(
+  direnv
   extip
   git
   # gpg-agent
